@@ -1,27 +1,13 @@
-// Dashboard
 import { RxDashboard } from 'react-icons/rx'
-// policy proposal
 import { BsFileRuled } from 'react-icons/bs'
 import { AiFillFileAdd } from 'react-icons/ai'
-import { MdOutlineHealthAndSafety } from 'react-icons/md'
-import { IoCarOutline } from 'react-icons/io5'
-// coorporate signup
+import { MdOutlineHealthAndSafety, MdFormatListBulleted, MdAutorenew } from 'react-icons/md'
+import { IoCarOutline, IoDocumentTextOutline } from 'react-icons/io5'
 import { FaBuildingCircleCheck, FaQ } from 'react-icons/fa6'
-// Repot and mis
 import { VscGraph } from 'react-icons/vsc'
-// Report and mis configurator
-import { MdFormatListBulleted } from 'react-icons/md'
-// FaQ
 import { FaQuestion } from 'react-icons/fa'
-// Renewals
-import { MdAutorenew } from 'react-icons/md'
-// help Request
-import { IoIosHelpBuoy } from 'react-icons/io'
-// claim Request
-import { IoDocumentTextOutline } from 'react-icons/io5'
-// service Request
-import { IoIosDocument } from 'react-icons/io'
-import Dashboard from '../../components/dashboard/Dashboard'
+import { IoIosHelpBuoy, IoIosDocument } from 'react-icons/io'
+import { RiLogoutCircleLine } from 'react-icons/ri'
 
 export const DASHBOARD_SIDEBAR_LINKS = [
     {
@@ -30,18 +16,12 @@ export const DASHBOARD_SIDEBAR_LINKS = [
         path: '/',
         icon: <RxDashboard />
     },
-    // {
-    //     key: 'policy_proposal_all',
-    //     label: 'All',
-    //     // path: '/b2c/status/all'
-    //     path: '/status/all'
-    //     // icon: <HiOutlineCube />
-    // },
     {
         key: 'policy_proposal_status',
         label: 'Policy Proposal Status',
         path: '/policy-proposal',
-        icon: <BsFileRuled />
+        icon: <BsFileRuled />,
+        hasSubMenu: true
     },
     {
         key: 'loast_leads',
@@ -59,7 +39,8 @@ export const DASHBOARD_SIDEBAR_LINKS = [
         key: 'vehicle_inspection_status',
         label: 'Vehicle Inspection Status',
         path: '',
-        icon: <IoCarOutline />
+        icon: <IoCarOutline />,
+        hasSubMenu: true
     },
     {
         key: 'corporate_signup',
@@ -111,17 +92,30 @@ export const DASHBOARD_SIDEBAR_LINKS = [
     }
 ]
 
-// export const DASHBOARD_SIDEBAR_BOTTOM_LINKS = [
-//     {
-//         key: 'settings',
-//         label: 'Settings',
-//         path: '/settings',
-//         icon: <HiOutlineCog />
-//     },
-//     {
-//         key: 'support',
-//         label: 'Help & Support',
-//         path: '/support',
-//         icon: <HiOutlineQuestionMarkCircle />
-//     }
-// ]
+export const DASHBOARD_SIDEBAR_BOTTOM_LINKS = [
+    {
+        key: 'logout',
+        label: 'Logout',
+        path: '/login',
+        icon: <RiLogoutCircleLine />
+    }
+]
+
+export const SUB_MENU_LIST = [
+    {
+        name: 'Policy Proposal Status',
+        menus: [
+            { key: 'all', label: 'All', path: '/all' },
+            { key: 'car', label: 'Car', path: '/car' },
+            { key: 'bike', label: 'Bike', path: '/bike' },
+            { key: 'health', label: 'Health', path: '/Health' }
+        ]
+    },
+    {
+        name: 'Vehicle Inspection Status',
+        menus: [
+            { key: 'InspectionCar', label: 'Car', path: '/car' },
+            { key: 'commercial_status', label: 'Commercial Status', path: '/commercial_status' }
+        ]
+    }
+]

@@ -18,6 +18,6 @@
         @apply bg-neutral-100;
     }
     a {
-        @apply text-sky-500 hover:underline;
+        @apply text-sky-500 hover:no-underline;
     }
 }
