@@ -4,12 +4,11 @@ import { motion } from "framer-motion";
 import classNames from "classnames";
 import logo from "../../../assets/images/logo1.png";
 import { DASHBOARD_SIDEBAR_LINKS } from "../../../lib/constants/navigation";
-import { DASHBOARD_SIDEBAR_BOTTOM_LINKS } from "../../../lib/constants/navigation";
 import { RiLogoutCircleLine } from "react-icons/ri";
 
 import Submenu from "./Submenu";
 const linkClases =
-  "flex items-center gap-2 font-medium pl-3 py-2 hover:bg-neutral-700 hover:no-underline active:bg-netral-600 rounded-sm text-base";
+  "flex items-center gap-2 font-medium pl-3 py-2 hover:bg-neutral-400 hover:no-underline hover:text-[#fff] active:bg-netral-600 rounded-sm text-base";
 function Sidebar() {
   return (
     <>
@@ -22,11 +21,6 @@ function Sidebar() {
             <SidebarLinks key={item.key} item={item} />
           ))}
         </div>
-        {/* <div>
-                    {DASHBOARD_SIDEBAR_BOTTOM_LINKS.map((item) => (
-                        <SidebarLinks key={item.key} item={item} />
-                    ))}
-                </div> */}
         <div className={classNames("text-red-500 cursor-pointer", linkClases)}>
           <span className="text-xl">
             <RiLogoutCircleLine />
@@ -47,9 +41,7 @@ function SidebarLinks({ item }) {
         <Link
           to={item.path}
           className={classNames(
-            pathname === item.path
-              ? "text-white bg-neutral-700"
-              : "text-[rgb(96 125 139/var(--tw-text-opacity))]",
+            pathname === item.path ? "text-white bg-neutral-700" : "text-black",
             linkClases
           )}
           onClick={() => setSubMenuOpen(!subMenuOpen)}
