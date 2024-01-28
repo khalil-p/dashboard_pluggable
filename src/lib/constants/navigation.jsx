@@ -24,9 +24,8 @@ export const DASHBOARD_SIDEBAR_LINKS = [
   {
     key: "policy_proposal_status",
     label: "Policy Proposal Status",
-    path: null,
+    path: "/policy_proposal_status/status/all",
     icon: <BsFileRuled />,
-    hasSubMenu: true,
   },
   {
     key: "loast_leads",
@@ -109,15 +108,15 @@ export const DASHBOARD_SIDEBAR_BOTTOM_LINKS = [
 ];
 
 export const SUB_MENU_LIST = [
-  {
-    name: "Policy Proposal Status",
-    menus: [
-      { key: "all", label: "All", path: "/all" },
-      { key: "car", label: "Car", path: "/car" },
-      { key: "bike", label: "Bike", path: "/bike" },
-      { key: "health", label: "Health", path: "/Health" },
-    ],
-  },
+  // {
+  //   name: "Policy Proposal Status",
+  //   menus: [
+  //     { key: "all", label: "All", path: "/all" },
+  //     { key: "car", label: "Car", path: "/car" },
+  //     { key: "bike", label: "Bike", path: "/bike" },
+  //     { key: "health", label: "Health", path: "/Health" },
+  //   ],
+  // },
   {
     name: "Vehicle Inspection Status",
     menus: [
@@ -154,15 +153,15 @@ export const SUB_MENU_LIST = [
     name: "Renewals",
     menus: [
       {
-        key: "RMISC_create1",
-        label: "Creat4e",
-        path: "/mis_configuration1",
+        key: "renewals_create",
+        label: "Create",
+        path: "/renewals_create",
       },
       {
-        key: "RMISC_lis1t",
-        label: "Li4st",
-        path: "/mis_list1",
+        key: "renewals_list",
+        label: "List",
+        path: "/renewals_list",
       },
     ],
-  },
+  },  
 ];

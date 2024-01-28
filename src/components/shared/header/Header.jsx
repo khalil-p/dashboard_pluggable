@@ -14,7 +14,7 @@ import { useNavigate } from "react-router-dom";
 function Header() {
   const navigate = useNavigate();
   return (
-    <div className="h-14 px-4 bg-[#fff] flex justify-between items-center">
+    <div className="h-14 px-4 py-3 bg-[#fff] flex justify-between items-center text-sm h-fit">
       <div className="relative">
         <CiSearch
           fontSize={20}

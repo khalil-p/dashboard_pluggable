@@ -8,7 +8,7 @@ import { RiLogoutCircleLine } from "react-icons/ri";
 
 import Submenu from "./Submenu";
 const linkClases =
-  "flex items-center gap-2 font-medium pl-3 py-2 hover:bg-neutral-400 hover:no-underline hover:text-[#fff] active:bg-netral-600 rounded-sm text-base";
+  "flex items-center gap-2 font-medium text-sm pl-3 py-2 hover:bg-neutral-400 hover:no-underline hover:text-[#fff] active:bg-netral-600 rounded-sm text-base";
 function Sidebar() {
   return (
     <>

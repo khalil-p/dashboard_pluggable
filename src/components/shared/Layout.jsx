@@ -5,7 +5,7 @@ import Header from "./header/Header";
 import Footer from "./footer/Footer";
 export default function Layout() {
   return (
-    <div className="flex flex-row bg-gray-100 h-screen w-screen">
+    <div className="flex flex-row bg-slate-50 h-screen w-screen ">
       <Sidebar />
       <div className="h-screen w-screen flex flex-col">
         <Header />
