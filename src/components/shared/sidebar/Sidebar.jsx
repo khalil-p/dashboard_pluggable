@@ -12,7 +12,7 @@ const linkClases =
 function Sidebar() {
   return (
     <>
-      <div className="bg-[#fff]  p-3 flex flex-col text-white z-[999] max-w-96 w-96 ">
+      <div className="bg-[#fff]  p-3 flex flex-col text-white z-[999] min-w-[16rem] w-[16rem] ">
         <div className="flex items-center justify-center px-1 pb-3">
           <img className="w-12" src={logo} alt="" />
         </div>

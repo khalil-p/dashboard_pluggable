@@ -47,6 +47,7 @@ function Table() {
     ]
     const table = useReactTable({ data, columns, getCoreRowModel: getCoreRowModel() })
     return (
+        <>
         <div className="flex flex-col w-full overflow-y-auto overflow-x-auto max-h-[calc(100vh-395px)] w-[45rem] border-[1px] border-slate-200">
             <table className=" rounded table-fixed">
                 <thead className="h-12 bg-white ">
@@ -85,6 +86,13 @@ function Table() {
                 </tbody>
             </table>
         </div>
+        <div className='text-sm pt-5 pb-5 flex justify-center gap-3'>
+            <button onClick={()=> table.setPageIndex(0)}>First Page</button>
+            {/* <button onClick={()=> }>Previous Page</button>
+            <button onClick={()=> }>Next Page</button> */}
+            <button onClick={()=> table.setPageIndex(table.getPageCount()-1)}>Last Page</button>
+        </div>
+        </>
     )
 }
 
