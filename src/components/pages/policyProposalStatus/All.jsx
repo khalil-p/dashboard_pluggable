@@ -1,11 +1,12 @@
 import React from 'react'
 import Table from './Table'
 function All() {
-  return (
-    <div>
-      <Table/>
-    </div>
-  )
+    return (
+
+        <>
+        <Table/>
+        </>
+    )
 }
 
 export default All

@@ -2,7 +2,49 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+/* Firefox */
+* {
+    scrollbar-width:2px;
+    scrollbar-color: yellow;
+  }
+  
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 2px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: gray;
+    border-radius: 2px;
+    width: 2px;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    /* background-color: red; */
+    width: 2px;
+    /* height: 2px; */
+    /* border-radius: 14px; */
+    border: 1px solid black;
+  }
+  
+  .hide_scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .react-datepicker__input-container input{
+    width: 5rem;
+  }
+  .react-datepicker__input-container input:focus{
+    outline: none;
+  }
+  .policy_proposal_to_date .react-datepicker-popper{
+    left: -5rem !important;
+  }
+  .policy_proposal_to_date .react-datepicker-popper svg{
+    left: 171px !important;
+  }
+  .disable-scroll {
+    overflow: hidden;
+  }
 @layer base {
     html {
         font-family: 'Inter', sans-serif;

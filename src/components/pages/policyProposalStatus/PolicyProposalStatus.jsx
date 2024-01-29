@@ -8,7 +8,7 @@ function PolicyProposalStatus() {
             <h1 className='font-bold'>Policy Insurance (NOP/premium)</h1>
             <PolicyNavBar />
             <StatusInfoNav/>
-            <div><Outlet /></div>
+            <Outlet />
            
         </div>
     )

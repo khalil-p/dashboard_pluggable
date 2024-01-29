@@ -1,10 +1,11 @@
 import React from 'react'
+import Table from './Table'
 
 function Renewal() {
   return (
-    <div>
-        Policy Proposal Renewal
-    </div>
+    <>
+    <Table/>
+    </>
   )
 }
 

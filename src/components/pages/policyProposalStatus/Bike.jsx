@@ -1,10 +1,11 @@
 import React from 'react'
+import Table from './Table'
 
 function Bike() {
   return (
-    <div>
-      Policy Proposal Bike
-    </div>
+    <>
+    <Table/>
+    </>
   )
 }
 

@@ -2,16 +2,6 @@ import React, { useMemo } from 'react'
 import { useReactTable, getCoreRowModel, flexRender } from '@tanstack/react-table'
 import mData from './accets/MOCK_DATA.json'
 function Table() {
-    // {
-    //     "id": 1,
-    //     "trace_id": "58d3:e374:5715:966a:c7b6:8fd3:1aae:79d6/26",
-    //     "section": "Jetta",
-    //     "customer_name": "Amalita",
-    //     "mobile_no": "801-984-3842",
-    //     "emial": "agarlett0@amazon.de",
-    //     "updated_at": "5/2/2023",
-    //     "action": "Pendiqing"
-    // }
     const data = useMemo(() => mData, [])
     const columns = [
         {
@@ -57,39 +47,41 @@ function Table() {
     ]
     const table = useReactTable({ data, columns, getCoreRowModel: getCoreRowModel() })
     return (
-        <div className="flex flex-col w-full overflow-y-auto max-h-[calc(100vh-395px)]">
-            <table class="w-full rounded">
-                {table.getHeaderGroups().map((headerGroup) => (
-                    <tr key={headerGroup.id}>
-                        {headerGroup.headers.map((header) => (
-                            <th key={header.id}>{flexRender(header.column.columnDef.header, header.getContext())}</th>
-                        ))}
-                    </tr>
-                ))}
+        <div className="flex flex-col w-full overflow-y-auto overflow-x-auto max-h-[calc(100vh-395px)] w-[45rem] border-[1px] border-slate-200">
+            <table className=" rounded table-fixed">
+                <thead className="h-12 bg-white ">
+                    {table.getHeaderGroups().map((headerGroup) => (
+                        <tr
+                            key={headerGroup.id}
+                            className="text-left border-t border-extraLightGray dark:border-darkGray bg-white  sticky top-[-2px]"
+                        >
+                          
+                                {headerGroup.headers.map((header) => (
+                                    <th
+                                        key={header.id}
+                                        className="px-4 text-sm h-10  undefined
+                                font-semibold text-subHeading/50  dark:text-gray"
+                                    >
+                                        <div className="flex items-center gap-1 select-none">
+                                            <span className='w-max'>
+                                                {flexRender(header.column.columnDef.header, header.getContext())}
+                                            </span>
+                                        </div>
+                                    </th>
+                                ))}
+                           
+                        </tr>
+                    ))}
+                </thead>
 
-                <tbody>
+                <tbody className="h-60 overflow-y-auto">
                     {table.getRowModel().rows.map((row) => (
                         <tr key={row.id}>
                             {row.getVisibleCells().map((cell) => (
-                                <td key={cell.id}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</td>
+                                <td style={{overflowWrap:'anywhere'}} key={cell.id}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</td>
                             ))}
                         </tr>
                     ))}
-                    <tr>
-                        <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
-                        <td>Malcolm Lockyer</td>
-                        <td>1961</td>
-                    </tr>
-                    <tr>
-                        <td>Witchy Woman</td>
-                        <td>The Eagles</td>
-                        <td>1972</td>
-                    </tr>
-                    <tr>
-                        <td>Shining Star</td>
-                        <td>Earth, Wind, and Fire</td>
-                        <td>1975</td>
-                    </tr>
                 </tbody>
             </table>
         </div>

@@ -16,7 +16,7 @@ function Sidebar() {
         <div className="flex items-center justify-center px-1 pb-3">
           <img className="w-12" src={logo} alt="" />
         </div>
-        <div className="flex-1 py-4 flex flex-col gap-0.5 overflow-scroll scrollbar ">
+        <div className="overflow-x-hidden  pr-4 flex-1 py-4 flex flex-col gap-0.5 overflow-scroll  overflow-y-auto">
           {DASHBOARD_SIDEBAR_LINKS.map((item) => (
             <SidebarLinks key={item.key} item={item} />
           ))}

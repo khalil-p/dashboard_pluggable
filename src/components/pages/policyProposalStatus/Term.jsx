@@ -1,10 +1,11 @@
 import React from 'react'
+import Table from './Table'
 
 function Term() {
   return (
-    <div>
-        Policy Proposal Term
-    </div>
+    <>
+    <Table/>
+    </>
   )
 }
 

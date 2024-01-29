@@ -4,12 +4,12 @@ import { Link, useLocation } from "react-router-dom";
 import classNames from "classnames";
 
 const linkClases =
-  "flex items-center gap-2 font-medium text-sm pl-5 py-2 mt-[0.125rem] mb-[0.125rem] hover:bg-neutral-700 hover:text-white hover:no-underline active:bg-netral-600 rounded-sm text-base border-left-2 border-gray-400";
+  "flex items-center gap-2 font-medium text-sm  py-2 mt-[0.125rem] mb-[0.125rem] hover:bg-neutral-400 hover:text-white hover:no-underline active:bg-netral-600 rounded-sm text-base border-left-2 border-gray-400";
 
 function Submenu({ mainMenuName }) {
   console.log(mainMenuName);
   return (
-    <div className="">
+    <div className="border-solid border-0 border-l border-gray-900 ml-5 pl-5">
       {SUB_MENU_LIST.map((item) => {
         return item.name === mainMenuName ? (
           <SubMenuList key={item.name} data={item.menus} />

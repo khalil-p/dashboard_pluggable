@@ -1,10 +1,11 @@
 import React from 'react'
+import Table from './Table'
 
 function Health() {
   return (
-    <div>
-        Policy Proposal Health
-    </div>
+    <>
+        <Table/>
+        </>
   )
 }
 

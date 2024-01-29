@@ -1,10 +1,11 @@
 import React from 'react'
+import Table from './Table'
 
 function SuperTopUp() {
   return (
-    <div>
-        Policy Proposal Super TopUp
-    </div>
+    <>
+        <Table/>
+        </>
   )
 }
 
