@@ -45,7 +45,7 @@ function PolicyNavBar() {
                                 pathname.replace(/[_/]/g, '').includes(item.name.replace(' ', '').toLocaleLowerCase())
                                     ? 'border-2 border-slate-200 shadow-md'
                                     : 'border-none',
-                                'w-[6.5rem] flex flex-col items-center gap-2 mt-8 pt-2 pb-2'
+                                'w-[6.5rem] transition-all delay-75 border-2 border-gray-400 rounded-xl flex flex-col items-center gap-2 mt-8 pt-2 pb-2'
                             )}
                             onClick={() => navigate(`/policy_proposal_status/${item.path}`)}
                         >
