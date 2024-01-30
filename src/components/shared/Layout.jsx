@@ -5,7 +5,7 @@ import Header from './header/Header'
 import Footer from './footer/Footer'
 export default function Layout() {
     return (
-        <div className="h-screen w-full flex gap-4 bg-offWhite">
+        <div className="h-screen w-full flex gap-4 bg-slate-100">
             <Sidebar />
             <div className="h-screen w-screen flex flex-col">
                 <Header className="sticky top-0" />

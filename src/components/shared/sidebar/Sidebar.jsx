@@ -8,11 +8,11 @@ import { RiLogoutCircleLine } from "react-icons/ri";
 
 import Submenu from "./Submenu";
 const linkClases =
-  "flex items-center gap-2 font-medium text-sm pl-3 py-2 hover:bg-neutral-400 hover:no-underline hover:text-[#fff] active:bg-netral-600 rounded-sm text-base";
+  "flex items-center gap-2 font-medium text-sm pl-3 py-2 hover:bg-white hover:no-underline hover:rounded-xl hover:text-sky-500 active:bg-netral-600 rounded-sm text-base";
 function Sidebar() {
   return (
     <>
-      <div className="bg-[#fff]  p-3 flex flex-col text-white z-[999] min-w-[16rem] w-[16rem] ">
+      <div className="p-3 flex flex-col text-white z-[999] min-w-[16rem] w-[16rem] ">
         <div className="flex items-center justify-center px-1 pb-3">
           <img className="w-12" src={logo} alt="" />
         </div>
@@ -41,7 +41,7 @@ function SidebarLinks({ item }) {
         <Link
           to={item.path}
           className={classNames(
-            pathname === item.path ? "text-white bg-neutral-700" : "text-black",
+            pathname === item.path ? "text-sky-500 bg-white rounded-xl" : "text-black",
             linkClases
           )}
           onClick={() => setSubMenuOpen(!subMenuOpen)}
@@ -52,6 +52,7 @@ function SidebarLinks({ item }) {
         <motion.div
           className="hidden"
           animate={
+            { x: 100 } &&
             subMenuOpen
               ? {
                   display: "block",
@@ -60,7 +61,7 @@ function SidebarLinks({ item }) {
                   display: "none",
                 }
           }
-          transition={{ type: "spring", duration: 0.5 }}
+
         >
           {item.hasSubMenu && <Submenu mainMenuName={item.label} />}
         </motion.div>

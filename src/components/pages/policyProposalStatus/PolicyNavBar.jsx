@@ -23,13 +23,13 @@ function PolicyNavBar() {
             <div className="text-sm justify-end flex items-center">
                 <p className="font-semibold">Select Date Range</p>
                 <div className="flex text-left ml-5">
-                    <div className="flex">
+                    <div className="flex items-center">
                         From :
                         <div className="ml-3">
                             <DatePickerReact />
                         </div>
                     </div>
-                    <div className="flex policy_proposal_to_date ml-3">
+                    <div className="flex policy_proposal_to_date ml-3 items-center">
                         To :
                         <div className="ml-3">
                             <DatePickerReact />
@@ -43,9 +43,9 @@ function PolicyNavBar() {
                         <div
                             className={classNames(
                                 pathname.replace(/[_/]/g, '').includes(item.name.replace(' ', '').toLocaleLowerCase())
-                                    ? 'border-2 border-slate-200 shadow-md'
-                                    : 'border-none',
-                                'w-[6.5rem] transition-all delay-75 border-2 border-gray-400 rounded-xl flex flex-col items-center gap-2 mt-8 pt-2 pb-2'
+                                    ? 'border-2 bg-white border-slate-200 shadow-md'
+                                    : 'border-none opacity-75',
+                                'w-[6.5rem] transition-opacity delay-75 border-2 border-gray-400 rounded-xl flex flex-col items-center gap-2 mt-8 pt-2 pb-2'
                             )}
                             onClick={() => navigate(`/policy_proposal_status/${item.path}`)}
                         >
