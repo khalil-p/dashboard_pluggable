@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-import { CiSearch } from "react-icons/ci";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { Popover, Transition, Menu } from "@headlessui/react";
 import { IoChevronDown } from "react-icons/io5";
@@ -10,22 +9,18 @@ import { MdOutlineEditOff } from "react-icons/md";
 import { TbLogout } from "react-icons/tb";
 import { TbLogout2 } from "react-icons/tb";
 import { useNavigate } from "react-router-dom";
+import SearchInputBox from "../searchInput/SearchInputBox";
 
 function Header() {
   const navigate = useNavigate();
   return (
     <div className="pr-4 py-3 flex justify-between items-center text-sm h-fit">
-      <div className="relative">
-        <CiSearch
-          fontSize={20}
-          className="text-gray-400 absolute top-1/2 -translate-y-1/2 left-3"
-        />
-        <input
-          type="text"
-          placeholder="Search..."
-          className="text-sm focus:outline-none active:outline-none h-8 w-[28rem] border-gray-300 border rounded-lg px-3 pl-10"
-        />
-      </div>
+      <SearchInputBox
+        placeholder="Search..."
+        height={8}
+        width={28}
+        iconFontSize={20}
+      />
       <div className="flex items-center gap-2 mr-2">
         <div>
           <Popover className="relative">
