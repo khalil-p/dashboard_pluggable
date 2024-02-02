@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import classNames from "classnames";
 
 const linkClases =
-  "flex items-center gap-2 font-medium text-sm pl-3 py-2 mt-[0.125rem] mb-[0.125rem] hover:bg-white hover:rounded-xl hover:text-sky-500 hover:no-underline active:bg-netral-600 rounded-sm text-base border-left-2 border-gray-400";
+  "flex items-center gap-2 font-semibold text-ellipsis font-medium text-sm px-3 py-2 mt-[0.125rem] mb-[0.125rem] hover:bg-white hover:rounded-xl hover:text-[#5879e6] hover:no-underline active:bg-netral-600 rounded-sm text-base border-left-2 border-gray-400 focus:outline-none";
 
 function Submenu({ mainMenuName }) {
   console.log(mainMenuName);
@@ -30,7 +30,7 @@ function SubMenuList({ data }) {
       key={item.key}
       to={item.path}
       className={classNames(
-        pathname === item.path ? "text-primary bg-white" : "text-black",
+        pathname === item.path ? "text-[#5879e6] bg-[#FFFFFF]" : "text-[#4e4b4b]",
         linkClases
       )}
     >

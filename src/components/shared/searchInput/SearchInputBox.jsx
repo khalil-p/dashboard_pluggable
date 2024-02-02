@@ -19,7 +19,8 @@ function SearchInputBox({
         <input
           type="text"
           placeholder={placeholder}
-          className={`text-sm focus:outline-none active:outline-none h-${height} w-[${width}rem] border-gray-300 border rounded-lg px-3 pl-10`}
+          style={{width:`${width}rem`, height:`${height}rem`}}
+          className={`text-sm focus:outline-none active:outline-none border-gray-300 border rounded-lg px-3 pl-10`}
           value={Value}
           onChange={(e)=>setFiltering(e.target.value)}
         />

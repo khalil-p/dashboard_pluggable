@@ -15,6 +15,7 @@ import { GrFormPrevious } from "react-icons/gr";
 import { GrFormNext } from "react-icons/gr";
 import mData from "./accets/MOCK_DATA.json";
 import SearchInputBox from "../../shared/searchInput/SearchInputBox";
+import DownloadButton from "../../shared/buttons/DownloadButton";
 function Table() {
   const data = useMemo(() => mData, []);
   const columns = [
@@ -79,17 +80,19 @@ function Table() {
   return (
     <>
       <div className="p-4 bg-[#fff] rounded-sm border-[1px] border-slate-200">
-        <div className="mb-4">
+        <div className="mb-4 flex justify-between items-center ">
           <SearchInputBox
             placeholder="Search..."
-            height={8}
+            height={2}
             width={15}
             iconFontSize={20}
             value={filtering}
             setFiltering={setFiltering}
           />
+
+          <div><DownloadButton data={data} fileName={"b2c"} /></div>
         </div>
-        <div className="flex flex-col overflow-y-auto overflow-x-auto  max-h-[calc(100vh-395px)] w-[calc(100vw-330px)]  bg-white">
+        <div className="flex flex-col overflow-y-auto overflow-x-auto  max-h-[calc(100vh-395px)] w-[calc(100vw-327px)]  bg-white">
           <table className=" rounded table-fixed  ">
             <thead className="h-12 bg-white ">
               {table.getHeaderGroups().map((headerGroup) => (

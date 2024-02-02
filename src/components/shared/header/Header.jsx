@@ -14,15 +14,15 @@ import SearchInputBox from "../searchInput/SearchInputBox";
 function Header() {
   const navigate = useNavigate();
   return (
-    <div className="pr-4 py-3 flex justify-between items-center text-sm h-fit">
+    <div className="pr-4 pt-3 pb-[1.7rem] flex justify-between items-center text-sm h-fit">
       <SearchInputBox
         placeholder="Search..."
-        height={8}
-        width={28}
+        height={2.3}
+        width={24}
         iconFontSize={20}
       />
       <div className="flex items-center gap-2 mr-2">
-        <div>
+        {/* <div>
           <Popover className="relative">
             {({ open }) => (
               <>
@@ -57,10 +57,10 @@ function Header() {
               </>
             )}
           </Popover>
-        </div>
+        </div> */}
 
         <div>
-          <Link className="text-black hover:no-underline">Admin</Link>
+          <Link className="text-black hover:no-underline font-semibold">Admin</Link>
         </div>
 
         <div>
