@@ -1,60 +1,81 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import { proposalNavImgs } from './accets/images/exportImg.jsx'
-import { useLocation } from 'react-router-dom'
-import classNames from 'classnames'
-import { Navigate } from "react-router-dom";
-import Select from 'react-select'
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { policiesOf } from "./policiesOf.jsx";
+import Select from "react-select";
 
-const policiesOf = [
-    { name: 'All', path: 'status/all', img: proposalNavImgs.allImg },
-    { name: 'Car', path: 'car', img: proposalNavImgs.carProposalImg },
-    { name: 'Bike', path: 'bike', img: proposalNavImgs.bikeProposalImg },
-    { name: 'Health', path: 'health', img: proposalNavImgs.healthNstpImg },
-    { name: 'Renewal', path: 'renewal', img: proposalNavImgs.renewalImg },
-    { name: 'Super Topup', path: 'super_topup', img: proposalNavImgs.superTopupImg },
-    { name: 'Term', path: 'term', img: proposalNavImgs.termProposal }
-]
+const customStyles = {
+  control: (provided, state) => ({
+    ...provided,
+    background: "#fff",
+    width: "11rem",
+    maxWidth: "11rem",
+    border: "none",
+    //   borderColor: '#9e9e9e',
+    minHeight: "30px",
+    height: "30px",
+    //   boxShadow: state.isFocused ? null : null,
+    fontSize: "0.85rem",
+    outline: 0, // Removes the blue outlin
+  }),
 
-const options = policiesOf.map((item) => {
-    ({
-    value: item.name,
+  valueContainer: (provided, state) => ({
+    ...provided,
+    height: "30px",
+    padding: "0 6px",
+  }),
+
+  input: (provided, state) => ({
+    ...provided,
+    margin: "0px",
+  }),
+  indicatorSeparator: (state) => ({
+    display: "none",
+  }),
+  indicatorsContainer: (provided, state) => ({
+    ...provided,
+    height: "30px",
+  }),
+  menu: (provided) => ({
+    ...provided,
+    padding: "5px", // Adjust padding as needed
+  }),
+  option: (provided) => ({
+    ...provided,
+    fontSize: "12px", // Adjust font size as needed
+  }),
+};
+function PolicyNavBar() {
+  const [defaultValue, setDefaultValue] = useState(null);
+  const navigate = useNavigate();
+  const options = policiesOf.map((item) => ({
+    value: item.path,
     label: (
-      <div className='flex items-center'  onClick={() =>  <Navigate to={`/policy_proposal_status/${item.path}`} replace={true} /> }>
-        <img className="w-8" alt={item.name} src={item.img} />
+      <div className="flex items-center gap-2">
+        <img className="w-5" alt={item.name} src={item.img} />
         <span>{item.name}</span>
       </div>
     ),
-  })});
+  }));
 
-function PolicyNavBar() {
-    const navigate = useNavigate()
-    const { pathname } = useLocation()
-    return (
-        <>
-            <div>
-                <Select options={options}/>
-            </div>
-            <div className="flex">
-                {policiesOf.map((item) => {
-                    return (
-                        <div
-                            className={classNames(
-                                pathname.replace(/[_/]/g, '').includes(item.name.replace(' ', '').toLocaleLowerCase())
-                                    ? 'border-2 bg-white border-slate-200 shadow-md'
-                                    : 'border-none opacity-75',
-                                'w-[6.5rem] transition-opacity delay-75 border-2 border-gray-400 rounded-xl flex flex-col items-center gap-2 pt-2 pb-2'
-                            )}
-                            onClick={() => navigate(`/policy_proposal_status/${item.path}`)}
-                        >
-                            <img className="w-11" alt={item.name} src={item.img} />
-                            <p className="text-sm">{item.name}</p>
-                        </div>
-                    )
-                })}
-            </div>
-        </>
-    )
+  const onhandleChange = (selectedOption) => {
+    navigate(selectedOption.value);
+  };
+  return (
+    <div className="flex flex-col gap-1">
+      <p className="text-sm ml-1 font-semibold">Select Policy Type :</p>
+      <div>
+        <Select
+          maxMenuHeight={100}
+          className="border border-gray-300 rounded-md"
+          styles={customStyles}
+          options={options}
+          onChange={onhandleChange}
+          defaultValue={defaultValue}
+          placeholder="Select Policy Type"
+        />
+      </div>
+    </div>
+  );
 }
 
-export default PolicyNavBar
+export default PolicyNavBar;

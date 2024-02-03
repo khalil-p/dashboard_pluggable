@@ -2,8 +2,8 @@ import React from "react";
 
 function Footer() {
   return (
-    <div className="text-sm bg-[#fff] py-3 px-2 text-center font-base font-medium">
-      Copyright © 2023 Bajaj Capital Insurance Broking Limited
+    <div className="text-sm pr-4 text-center font-base font-medium bg-transparent mt-4 ">
+      <div className="bg-[#eff3f6] py-3">Copyright © 2023 Bajaj Capital Insurance Broking Limited</div>
     </div>
   );
 }

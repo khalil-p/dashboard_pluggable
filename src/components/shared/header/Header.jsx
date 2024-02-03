@@ -1,9 +1,7 @@
 import React, { Fragment } from "react";
-import { IoIosNotificationsOutline } from "react-icons/io";
-import { Popover, Transition, Menu } from "@headlessui/react";
+import {Transition, Menu } from "@headlessui/react";
 import { IoChevronDown } from "react-icons/io5";
 import { Link } from "react-router-dom";
-import classNames from "classnames";
 import { MdOutlineEdit } from "react-icons/md";
 import { MdOutlineEditOff } from "react-icons/md";
 import { TbLogout } from "react-icons/tb";
@@ -14,13 +12,13 @@ import SearchInputBox from "../searchInput/SearchInputBox";
 function Header() {
   const navigate = useNavigate();
   return (
-    <div className="pr-4 pt-3 pb-[1.7rem] flex justify-between items-center text-sm h-fit">
-      <SearchInputBox
+    <div className="pr-4 pt-3 pb-[1.9rem] flex justify-end items-center text-sm h-fit">
+      {/* <SearchInputBox
         placeholder="Search..."
         height={2.3}
         width={24}
         iconFontSize={20}
-      />
+      /> */}
       <div className="flex items-center gap-2 mr-2">
         {/* <div>
           <Popover className="relative">

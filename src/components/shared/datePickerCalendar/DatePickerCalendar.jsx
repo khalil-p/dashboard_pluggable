@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Datepicker from "react-tailwindcss-datepicker";
-
+import './datePickerCustomStyle.css'
 const DatePickerCalendar = () => {
   const [value, setValue] = useState({
     startDate: new Date(),
@@ -14,9 +14,9 @@ const DatePickerCalendar = () => {
 
   return (
     <div className="w-max flex gap-1 items-center">
-      <span className="text-sm font-medium text-body dark:text-gray px-[0.7px]">
+      {/* <span className="text-sm font-medium text-body dark:text-gray px-[0.7px]">
         Select Date Range :
-      </span>
+      </span> */}
       <div className="w-[15rem]" >
         <Datepicker
           separator={" To "}

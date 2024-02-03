@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import classNames from "classnames";
-import logo from "../../../assets/images/logo1.png";
+import logo from "../../../assets/images/fyntune.png";
 import { DASHBOARD_SIDEBAR_LINKS } from "../../../lib/constants/navigation";
 import { RiLogoutCircleLine } from "react-icons/ri";
 
@@ -13,8 +13,8 @@ function Sidebar() {
   return (
     <>
       <div className="p-3 flex flex-col text-white z-[999] min-w-[16rem] w-[16rem] ">
-        <div className="flex items-center justify-center px-1 pb-3">
-          <img className="w-24" src={logo} alt="" />
+        <div className="flex items-center justify-center px-1 pb-3 h-12 max-h-12 overflow-hidden">
+          <img className="w-32" src={logo} alt="" />
         </div>
         <div className="overflow-x-hidden pr-4 py-4 flex-1 flex flex-col gap-0.5 overflow-scroll overflow-y-auto">
           {DASHBOARD_SIDEBAR_LINKS.map((item) => (

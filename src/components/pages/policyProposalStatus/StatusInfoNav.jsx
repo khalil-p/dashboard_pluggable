@@ -43,7 +43,7 @@ function StatusInfoNav() {
       onWheel={handleScroll}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="flex flex-row gap-4 overflow-x-auto w-[calc(100vw-300px)] px-4 mb-6 mt-8 scrollbar hide_scrollbar"
+      className="flex flex-row gap-4 overflow-x-auto w-[calc(100vw-300px)] px-4 hide_scrollbar"
     >
       {statusInfo.map((item) => {
         return (

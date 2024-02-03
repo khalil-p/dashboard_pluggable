@@ -16,6 +16,7 @@ import { GrFormNext } from "react-icons/gr";
 import mData from "./accets/MOCK_DATA.json";
 import SearchInputBox from "../../shared/searchInput/SearchInputBox";
 import DownloadButton from "../../shared/buttons/DownloadButton";
+import ZoomButton from "../../shared/buttons/ZoomButton";
 function Table() {
   const data = useMemo(() => mData, []);
   const columns = [
@@ -90,7 +91,7 @@ function Table() {
             setFiltering={setFiltering}
           />
 
-          <div><DownloadButton data={data} fileName={"b2c"} /></div>
+          <div className="flex gap-2"><DownloadButton data={data} fileName={"b2c"} /><ZoomButton/></div>
         </div>
         <div className="flex flex-col overflow-y-auto overflow-x-auto  max-h-[calc(100vh-395px)] w-[calc(100vw-327px)]  bg-white">
           <table className=" rounded table-fixed  ">
@@ -104,8 +105,8 @@ function Table() {
                     <th
                       key={header.id}
                       onClick={header.column.getToggleSortingHandler()}
-                      className="px-4 text-sm h-10  undefined
-                                font-semibold text-subHeading/50  dark:text-gray"
+                      className="px-4 text-sm h-10 undefined
+                                font-semibold text-subHeading/50 dark:text-gray text-[#343a4080]"
                     >
                       <div className="flex items-center gap-1 select-none">
                         <span className="w-max">
@@ -148,7 +149,7 @@ function Table() {
                 <tr key={row.id} className="hover:bg-slate-200">
                   {row.getVisibleCells().map((cell) => (
                     <td
-                      className="w-[2rem] w-min=[2rem]"
+                      className="px-4 py-0 h-10 flex-1"
                       style={{ overflowWrap: "anywhere" }}
                       key={cell.id}
                     >
@@ -221,7 +222,7 @@ function Table() {
                 onChange={(e) => {
                   table.setPageSize(Number(e.target.value));
                 }}
-                className="p-1.5 bg-transparent focus:outline-none border-2 rounded"
+                className="p-1 bg-transparent focus:outline-none border-2 rounded"
               >{
                 [10,20,30].map((pageSize)=>{return(
                     <option key={pageSize} value={pageSize}>Show {pageSize}</option>

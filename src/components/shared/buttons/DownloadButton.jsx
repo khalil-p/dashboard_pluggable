@@ -11,7 +11,7 @@ function DownloadButton({data = [],fileName}) {
         XLSX.utils.book_append_sheet(workbook, worksheet, "Sheet1");
         XLSX.writeFile(workbook, fileName ? `${fileName}.xls` : "data.xlsx");
       }}
-      className="cursor-pointer p-2 rounded-xl hover:bg-slate-100 border border-gray"
+      className="cursor-pointer p-2 rounded-xl hover:bg-slate-100 border border-gray text-[#5879e6]"
     >
       <FiDownload />
     </button>
