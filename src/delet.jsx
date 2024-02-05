@@ -40,3 +40,37 @@ function PolicyNavBar() {
 }
 
 export default PolicyNavBar
+
+
+
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import Select from 'react-select';
+import { policiesOf } from './policiesOf.jsx'; // Make sure to provide the correct path
+
+function PolicyNavBar() {
+    const navigate = useNavigate();
+    const options = policiesOf.map((item) => ({
+        value: item.path, // Use the path as the value
+        label: (
+            <div className="flex items-center gap-2">
+                <img className="w-6" alt={item.name} src={item.img} />
+                <span>{item.name}</span>
+            </div>
+        ),
+    }));
+
+    const handleSelectChange = (selectedOption) => {
+        navigate(selectedOption.value);
+    };
+
+    return (
+        <>
+            <div>
+                <Select options={options} onChange={handleSelectChange} />
+            </div>
+        </>
+    );
+}
+
+export default PolicyNavBar;

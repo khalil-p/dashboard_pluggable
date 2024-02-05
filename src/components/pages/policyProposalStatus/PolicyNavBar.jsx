@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { policiesOf } from "./policiesOf.jsx";
 import Select from "react-select";
+import { useLocation } from "react-router-dom";
 
 const customStyles = {
   control: (provided, state) => ({
@@ -45,6 +46,8 @@ const customStyles = {
   }),
 };
 function PolicyNavBar() {
+    const path = useLocation();
+    console.log("Current Location..",path);
   const [defaultValue, setDefaultValue] = useState(null);
   const navigate = useNavigate();
   const options = policiesOf.map((item) => ({
@@ -70,7 +73,13 @@ function PolicyNavBar() {
           styles={customStyles}
           options={options}
           onChange={onhandleChange}
-          defaultValue={defaultValue}
+          defaultValue={options.map((i,index)=>{
+            console.log("default value in select",i.value);
+                if(path.pathname.includes(i.value)) {
+                    console.log(i);
+                    return i;
+                }
+          })}
           placeholder="Select Policy Type"
         />
       </div>

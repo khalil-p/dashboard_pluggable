@@ -4,6 +4,13 @@
 @tailwind components;
 @tailwind utilities;
 /* Firefox */
+html,
+body,
+#root {
+  /* height: 90%;
+  margin: 0px; */
+  overflow-x: hidden;
+}
 * {
     scrollbar-width:2px;
     scrollbar-color: yellow;

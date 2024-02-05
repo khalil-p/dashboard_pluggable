@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { Fragment, useMemo, useState } from "react";
 import {
   useReactTable,
   getCoreRowModel,
@@ -17,7 +17,77 @@ import mData from "./accets/MOCK_DATA.json";
 import SearchInputBox from "../../shared/searchInput/SearchInputBox";
 import DownloadButton from "../../shared/buttons/DownloadButton";
 import ZoomButton from "../../shared/buttons/ZoomButton";
-function Table() {
+import { Dialog, Transition } from "@headlessui/react";
+
+
+function MyDialog() {
+  let [isOpen, setIsOpen] = useState(false);
+  function closeModal() {
+    setIsOpen(false);
+  }
+  function openModal(getVal) {
+    setIsOpen(getVal);
+    getVal ?? <MyDialog/>
+    console.log(getVal);
+  }
+
+  return (
+    <>
+      <Transition appear show={isOpen} as={Fragment}>
+        <Dialog as="div" className="relative z-10" onClose={closeModal}>
+          <Transition.Child
+            as={Fragment}
+            enter="ease-out duration-300"
+            enterFrom="opacity-0"
+            enterTo="opacity-100"
+            leave="ease-in duration-200"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <div className="fixed inset-0 bg-black/25" />
+          </Transition.Child>
+
+          <div className="fixed inset-0 overflow-y-auto">
+            <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <Transition.Child
+                as={Fragment}
+                enter="ease-out duration-300"
+                enterFrom="opacity-0 scale-95"
+                enterTo="opacity-100 scale-100"
+                leave="ease-in duration-200"
+                leaveFrom="opacity-100 scale-100"
+                leaveTo="opacity-0 scale-95"
+              >
+                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                  <Dialog.Title
+                    as="h3"
+                    className="text-lg font-medium leading-6 text-gray-900"
+                  >
+                    Payment successful
+                  </Dialog.Title>
+                  <div className="mt-2">
+                    <Table openModal={openModal} setIsOpen={setIsOpen} />
+                  </div>
+                  {/* 
+                  <div className="mt-4">
+                    <button
+                      type="button"
+                      className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                      onClick={closeModal}
+                    >
+                      Got it, thanks!
+                    </button>
+                  </div> */}
+                </Dialog.Panel>
+              </Transition.Child>
+            </div>
+          </div>
+        </Dialog>
+      </Transition>
+    </>
+  );
+}
+function Table({ isOpen, setIsOpen, openModal }) {
   const data = useMemo(() => mData, []);
   const columns = [
     {
@@ -78,8 +148,13 @@ function Table() {
     onSortingChange: setSorting,
     onColumnFiltersChange: setFiltering,
   });
+
+  // const handleZoom = () =>{
+
+  // }
   return (
     <>
+    <MyDialog/>
       <div className="p-4 bg-[#fff] rounded-sm border-[1px] border-slate-200">
         <div className="mb-4 flex justify-between items-center ">
           <SearchInputBox
@@ -91,7 +166,10 @@ function Table() {
             setFiltering={setFiltering}
           />
 
-          <div className="flex gap-2"><DownloadButton data={data} fileName={"b2c"} /><ZoomButton/></div>
+          <div className="flex gap-2">
+            <DownloadButton data={data} fileName={"b2c"} />
+            <ZoomButton onClick={() => openModal(true)} />
+          </div>
         </div>
         <div className="flex flex-col overflow-y-auto overflow-x-auto  max-h-[calc(100vh-395px)] w-[calc(100vw-327px)]  bg-white">
           <table className=" rounded table-fixed  ">
@@ -223,11 +301,15 @@ function Table() {
                   table.setPageSize(Number(e.target.value));
                 }}
                 className="p-1 bg-transparent focus:outline-none border-2 rounded"
-              >{
-                [10,20,30].map((pageSize)=>{return(
-                    <option key={pageSize} value={pageSize}>Show {pageSize}</option>
-                )})
-              }</select>
+              >
+                {[10, 20, 30].map((pageSize) => {
+                  return (
+                    <option key={pageSize} value={pageSize}>
+                      Show {pageSize}
+                    </option>
+                  );
+                })}
+              </select>
             </span>
           </div>
         </div>
