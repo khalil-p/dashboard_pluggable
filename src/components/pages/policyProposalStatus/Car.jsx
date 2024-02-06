@@ -1,10 +1,10 @@
 import React from 'react'
-import Table from './Table'
+import MainTable from './MainTable'
 
 function Car() {
   return (
     <>
-    <Table/>
+     <MainTable/>
     </>
   )
 }

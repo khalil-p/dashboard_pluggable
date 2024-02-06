@@ -1,10 +1,11 @@
 import React from 'react'
-import Table from './Table'
+import MainTable from './MainTable'
+
 
 function Renewal() {
   return (
     <>
-    <Table/>
+      <MainTable/>
     </>
   )
 }
