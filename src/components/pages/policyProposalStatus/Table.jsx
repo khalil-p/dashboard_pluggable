@@ -18,6 +18,7 @@ import SearchInputBox from "../../shared/searchInput/SearchInputBox";
 import DownloadButton from "../../shared/buttons/DownloadButton";
 import ZoomButton from "../../shared/buttons/ZoomButton";
 import { Dialog, Transition } from "@headlessui/react";
+import TableModal from "./TableModal";
 
 
 function MyDialog() {
@@ -155,6 +156,7 @@ function Table({ isOpen, setIsOpen, openModal }) {
   return (
     <>
     <MyDialog/>
+    <TableModal/>
       <div className="p-4 bg-[#fff] rounded-sm border-[1px] border-slate-200">
         <div className="mb-4 flex justify-between items-center ">
           <SearchInputBox
