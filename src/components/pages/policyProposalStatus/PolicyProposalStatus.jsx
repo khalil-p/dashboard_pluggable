@@ -7,25 +7,24 @@ import DatePickerCalendar from "../../shared/datePickerCalendar/DatePickerCalend
 import CascadingDropDown from "../../shared/cascadingDropdown/CascadingDropDown.jsx";
 import { BsFilterLeft } from "react-icons/bs";
 import SideSlideBar from "../../shared/sideSlideBar/SideSlideBar.jsx";
+import Background from "../../shared/background/Background.jsx";
 function PolicyProposalStatus() {
   const [sideBarMargin, setSideBarMargin] = useState(-400);
-  const [sideBarOpen, setSideBarOpen] = useState(false)
+  const [sideBarOpen, setSideBarOpen] = useState(false);
   const handleSiderBar = () => {
-    if(!sideBarOpen) {
-      setSideBarMargin(-5)
-      setSideBarOpen(true)
-    }else if(sideBarOpen) {
-      setSideBarMargin(-400)
-      setSideBarOpen(false)
+    if (!sideBarOpen) {
+      setSideBarMargin(-5);
+      setSideBarOpen(true);
+    } else if (sideBarOpen) {
+      setSideBarMargin(-400);
+      setSideBarOpen(false);
     }
   };
   return (
     <div className="flex flex-col gap-2">
       <Path />
-      <div
-        className="bg-white p-4 border border-extraLightGray
-        text-subHeading rounded-md flex flex-col justify-between gap-2 items-start"
-      >
+
+      <Background>
         <div className="flex gap-2 w-full justify-between relative">
           <h1 className="font-semibold text-[#7a7070] ">
             Policy Insurance (NOP/premium)
@@ -45,7 +44,7 @@ function PolicyProposalStatus() {
           <PolicyNavBar />
           <CascadingDropDown />
         </div>
-      </div>
+      </Background>
       <StatusInfoNav />
       <Outlet />
     </div>

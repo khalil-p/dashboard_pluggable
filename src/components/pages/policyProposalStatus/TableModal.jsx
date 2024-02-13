@@ -7,9 +7,9 @@ const TableModal = ({ onClose, children }) => {
   return (
     <div className="enlarged-popup-overlay z-[1000]">
       <div className="enlarged-popup">
-        {/* <span className="close-button" onClick={onClose}>
+        <span className="close-button" onClick={onClose}>
           &times;
-        </span> */}
+        </span>
        {children}
       </div>
     </div>
