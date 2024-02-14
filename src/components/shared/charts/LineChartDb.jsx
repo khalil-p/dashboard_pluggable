@@ -1,14 +1,14 @@
 import React from "react";
-import { Chart as Chartjs, defaults } from "chart.js/auto";
-import {Doughnut } from "react-chartjs-2";
+import { Chart as Chartjs,defaults } from "chart.js/auto";
+import {Line } from "react-chartjs-2";
 import sourceData from "./sourceData.json";
 
 defaults.maintainAspectRatio= false;
 defaults.responsive = true;
-function PieChartDb() {
+function LineChartDb() {
   return (
-    
-      <Doughnut
+
+      <Line
         data={{
           labels: sourceData.map((i) => {
             return i.label;
@@ -34,8 +34,8 @@ function PieChartDb() {
           ],
         }}
       />
-    
+
   );
 }
 
-export default PieChartDb;
+export default LineChartDb;

@@ -1,14 +1,14 @@
 import React from "react";
 import { Chart as Chartjs, defaults } from "chart.js/auto";
-import {Doughnut } from "react-chartjs-2";
+import { Bar } from "react-chartjs-2";
 import sourceData from "./sourceData.json";
 
 defaults.maintainAspectRatio= false;
 defaults.responsive = true;
-function PieChartDb() {
+function BarChartDb() {
   return (
     
-      <Doughnut
+      <Bar
         data={{
           labels: sourceData.map((i) => {
             return i.label;
@@ -29,7 +29,7 @@ function PieChartDb() {
                 "rgba( 138, 43, 226, 1 )",
                 "rgba( 165, 42, 42, 1 )",
               ],
-                
+
             },
           ],
         }}
@@ -38,4 +38,4 @@ function PieChartDb() {
   );
 }
 
-export default PieChartDb;
+export default BarChartDb;

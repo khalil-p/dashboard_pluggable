@@ -1,0 +1,38 @@
+[
+    {
+        "label": "Quote-Buy Now",
+        "Value": 800
+    },
+    {
+        "label": "Proposal Pending",
+        "Value": 680
+    },
+    {
+        "label": "Payment Pending",
+        "Value": 500
+    },
+    {
+        "label": "Issued",
+        "Value": 350
+    },
+    {
+        "label": "Booking Pending",
+        "Value": 400
+    },
+    {
+        "label": "Underwriting Approval",
+        "Value": 300
+    },
+    {
+        "label": "Inspection",
+        "Value": 0
+    },
+    {
+        "label": "Redirection",
+        "Value": 50
+    },
+    {
+        "label": "Rider",
+        "Value": 100
+    }
+]
