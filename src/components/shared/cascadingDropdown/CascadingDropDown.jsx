@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Select from "react-select";
+import HorizontalScroll from "../horizontalScroll/HorizontalScroll";
 
 const customStyles = {
   control: (provided, state) => ({
@@ -12,6 +13,7 @@ const customStyles = {
     height: "30px",
     fontSize: "0.85rem",
     outline: 0, // Removes the blue outlin
+    zIndex:1000,
   }),
 
   valueContainer: (provided, state) => ({
@@ -78,51 +80,57 @@ function CascadingDropDown() {
   };
   return (
     // <div className="border border-extraLightGray p-2 rounded-lg bg-[#fff]">
+
     <div className="flex flex-col gap-1">
       <p className="text-sm ml-1 font-semibold">Employee :</p>
-      <div className="flex gap-2">
+      <div
+        className="flex gap-2"
+        style={{ maxWidth: "calc(100vw - 540px)" }}
+      >
         {console.log("sdfsdf", stateOptions)}
-        <Select
-          id="ddlCountries"
-          maxMenuHeight={100}
-          className="border border-gray-300 rounded-md"
-          styles={customStyles}
-          options={countryOptions} // Use countryOptions here
-          placeholder="Select Country"
-          onChange={handleCountry}
-        />
-        <Select
-          id="ddlStates"
-          maxMenuHeight={100}
-          className="border border-gray-300 rounded-md"
-          styles={customStyles}
-          options={stateOptions} // Use countryOptions here
-          placeholder="Select State"
-        />
-        <Select
-          id="ddlStates"
-          maxMenuHeight={100}
-          className="border border-gray-300 rounded-md"
-          styles={customStyles}
-          options={stateOptions} // Use countryOptions here
-          placeholder="Select State"
-        />
-        <Select
-          id="ddlStates"
-          maxMenuHeight={100}
-          className="border border-gray-300 rounded-md"
-          styles={customStyles}
-          options={stateOptions} // Use countryOptions here
-          placeholder="Select State"
-        />
-        <Select
-          id="ddlStates"
-          maxMenuHeight={100}
-          className="border border-gray-300 rounded-md"
-          styles={customStyles}
-          options={stateOptions} // Use countryOptions here
-          placeholder="Select State"
-        />
+        <HorizontalScroll>
+          <Select
+            id="ddlCountries"
+            maxMenuHeight={100}
+            className="border border-gray-300 rounded-md"
+            styles={customStyles}
+            options={countryOptions} // Use countryOptions here
+            placeholder="Select Country"
+            onChange={handleCountry}
+          />
+          <Select
+            id="ddlStates"
+            maxMenuHeight={100}
+            className="border border-gray-300 rounded-md"
+            styles={customStyles}
+            options={stateOptions} // Use countryOptions here
+            placeholder="Select State"
+          />
+          <Select
+            id="ddlStates"
+            maxMenuHeight={100}
+            className="border border-gray-300 rounded-md"
+            styles={customStyles}
+            options={stateOptions} // Use countryOptions here
+            placeholder="Select State"
+          />
+          <Select
+            id="ddlStates"
+            maxMenuHeight={100}
+            className="border border-gray-300 rounded-md"
+            styles={customStyles}
+            options={stateOptions} // Use countryOptions here
+            placeholder="Select State"
+          />
+          <Select
+            id="ddlStates"
+            maxMenuHeight={100}
+            className="border border-gray-300 rounded-md"
+            styles={customStyles}
+            options={stateOptions} // Use countryOptions here
+            placeholder="Select State"
+          />
+        </HorizontalScroll>
       </div>
     </div>
   );

@@ -1,50 +1,13 @@
-import React, { useRef, useState, useEffect } from 'react';
-import { statusInfo } from './statusInfo.js';
-import { useLocation } from 'react-router-dom';
+import React from "react";
+import { statusInfo } from "./statusInfo.js";
+import { useLocation } from "react-router-dom";
+import HorizontalScroll from "../../shared/horizontalScroll/HorizontalScroll.jsx";
 
 function StatusInfoNav() {
   const { pathname } = useLocation();
-  const containerRef = useRef(null);
-  const [isHovered, setIsHovered] = useState(false);
-
-  const handleScroll = (e) => {
-    const container = containerRef.current;
-    if (container) {
-      container.scrollLeft += e.deltaY;
-    }
-  };
-
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-  };
-
-  useEffect(() => {
-    const handleBodyScroll = (e) => {
-      if (isHovered) {
-        e.preventDefault();
-        e.stopPropagation();
-      }
-    };
-
-    document.body.addEventListener('wheel', handleBodyScroll, { passive: false });
-
-    return () => {
-      document.body.removeEventListener('wheel', handleBodyScroll);
-    };
-  }, [isHovered]);
 
   return (
-    <div
-      ref={containerRef}
-      onWheel={handleScroll}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      className="flex flex-row gap-4 overflow-x-auto w-[calc(100vw-300px)] px-4 hide_scrollbar"
-    >
+    <HorizontalScroll>
       {statusInfo.map((item) => {
         return (
           pathname.includes(item.statusOf) &&
@@ -61,7 +24,7 @@ function StatusInfoNav() {
           })
         );
       })}
-    </div>
+    </HorizontalScroll>
   );
 }
 

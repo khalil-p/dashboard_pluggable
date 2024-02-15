@@ -12,7 +12,8 @@ const linkClases =
 function Sidebar() {
   return (
     <>
-      <div className="p-3 flex flex-col text-white z-[999] min-w-[16rem] w-[16rem] ">
+      {/* <div className="p-3 flex flex-col text-white z-[999] min-w-[16rem] w-[16rem]"> */}
+      <div className="p-3 flex flex-col text-white z-[999] w-[16rem]">
         <div className="flex items-center justify-center px-1 pb-3 h-12 max-h-12 overflow-hidden">
           <img className="w-32" src={logo} alt="" />
         </div>

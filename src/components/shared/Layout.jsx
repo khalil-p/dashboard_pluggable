@@ -9,7 +9,7 @@ export default function Layout() {
             <Sidebar />
             <div className="h-screen w-screen flex flex-col">
                 <Header className="sticky top-0" />
-                <div className="h-screen overflow-x-hidden  pr-4 flex-1 py-4 overflow-y-scroll">
+                <div className="h-screen overflow-x-hidden  pr-4 flex-1 py-4 overflow-y-scroll w-[calc(100vw-291px)]">
                     {<Outlet />}
                 </div>
                 <div>

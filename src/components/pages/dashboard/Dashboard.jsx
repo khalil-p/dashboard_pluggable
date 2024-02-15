@@ -6,6 +6,7 @@ import BarChartDb from "../../shared/charts/BarChartDb";
 import PieChartDb from "../../shared/charts/PieChartDb";
 import LineChartDb from "../../shared/charts/LineChartDb";
 import DatePickerCalendar from "../../shared/datePickerCalendar/DatePickerCalendar";
+import TitleBullet from "../../shared/TitleBullet";
 const upcomingRenewalList = [
   {
     when: "Today",
@@ -73,6 +74,7 @@ function Dashboard() {
                 </div>
               </div>
               <div className="flex gap-2 flex-col">
+                
                 <Heading heading={"Expired Renewals"} />
                 <div className="grid grid-cols-2 gap-4 this_div">
                   {expiredRenewalList.map((item) => {
@@ -85,7 +87,9 @@ function Dashboard() {
         </div>
         <Background>
           <div>
-            <p className="font-semibold pb-2">Select Date Range:</p>
+            <div>
+            <p className="font-semibold pb-2">Search</p>
+            </div>
             <div className="text-sm justify-end flex items-center gap-4">
               <DatePickerCalendar />
             </div>
