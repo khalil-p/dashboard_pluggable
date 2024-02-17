@@ -1,3 +1,3 @@
 import { createContext } from "react";
 
-export const zoomContext = createContext();
+export const zoomContext = createContext({});

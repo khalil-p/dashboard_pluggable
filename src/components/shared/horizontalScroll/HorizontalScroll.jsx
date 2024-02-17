@@ -40,7 +40,7 @@ function HorizontalScroll({children}) {
       onWheel={handleScroll}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="flex flex-row gap-4 overflow-x-auto hide_scrollbar"
+      className="flex flex-row gap-4 overflow-x-auto hide_scrollbar overflow-y-hidden"
     >
     {children}
     </div>

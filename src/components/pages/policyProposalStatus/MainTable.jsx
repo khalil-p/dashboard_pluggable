@@ -18,10 +18,12 @@ import mData from "./accets/MOCK_DATA.json";
 import SearchInputBox from "../../shared/searchInput/SearchInputBox";
 import DownloadButton from "../../shared/buttons/DownloadButton";
 import { sideBarContext } from "../../../lib/contexts/sideBarContext";
+import { zoomContext } from "../../../lib/contexts/commonContexts";
 import ZoomButton from "../../shared/buttons/ZoomButton";
 import Table from "./Table";
 
 function MainTable() {
+  const {isZoomed,setIsZoomed} = useContext(zoomContext)
     const {expanded} = useContext(sideBarContext)
     const data = useMemo(() => mData, []);
     const columns = [
@@ -97,7 +99,7 @@ function MainTable() {
       <div className="flex gap-2">
         <DownloadButton data={data} fileName={"b2c"} />
         <Table/>
-        {/* <ZoomButton onclick={onclick}/> */}
+        <ZoomButton onclick={()=>setIsZoomed(true)}/>
       </div>
     </div>
     <div className={`flex flex-col overflow-y-auto overflow-x-auto  max-h-[calc(100vh-395px)] ${expanded ? "w-[calc(100vw-327px)]" : "w-full"}  bg-white`}>
