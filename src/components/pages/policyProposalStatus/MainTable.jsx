@@ -1,4 +1,4 @@
-import React, {useMemo, useState } from "react";
+import React, {useMemo, useState, useContext } from "react";
 
 import {
   useReactTable,
@@ -17,11 +17,12 @@ import { GrFormNext } from "react-icons/gr";
 import mData from "./accets/MOCK_DATA.json";
 import SearchInputBox from "../../shared/searchInput/SearchInputBox";
 import DownloadButton from "../../shared/buttons/DownloadButton";
+import { sideBarContext } from "../../../lib/contexts/sideBarContext";
 import ZoomButton from "../../shared/buttons/ZoomButton";
 import Table from "./Table";
 
 function MainTable() {
-  
+    const {expanded} = useContext(sideBarContext)
     const data = useMemo(() => mData, []);
     const columns = [
       {
@@ -99,7 +100,7 @@ function MainTable() {
         {/* <ZoomButton onclick={onclick}/> */}
       </div>
     </div>
-    <div className="flex flex-col overflow-y-auto overflow-x-auto  max-h-[calc(100vh-395px)] w-[calc(100vw-327px)]  bg-white">
+    <div className={`flex flex-col overflow-y-auto overflow-x-auto  max-h-[calc(100vh-395px)] ${expanded ? "w-[calc(100vw-327px)]" : "w-full"}  bg-white`}>
       <table className=" rounded table-fixed  ">
         <thead className="h-12 bg-white ">
           {table.getHeaderGroups().map((headerGroup) => (

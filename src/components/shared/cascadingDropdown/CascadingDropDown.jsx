@@ -13,7 +13,7 @@ const customStyles = {
     height: "30px",
     fontSize: "0.85rem",
     outline: 0, // Removes the blue outlin
-    zIndex:1000,
+    // zIndex:1000,
   }),
 
   valueContainer: (provided, state) => ({
