@@ -19,8 +19,10 @@ import SearchInputBox from '../../shared/searchInput/SearchInputBox'
 import DownloadButton from '../../shared/buttons/DownloadButton'
 import { sideBarContext } from '../../../lib/contexts/sideBarContext'
 import ZoomButton from '../../shared/buttons/ZoomButton'
+import { zoomContext } from '../../../lib/contexts/commonContexts'
 function MainTable() {
     const { expanded } = useContext(sideBarContext)
+    const { isOpen, setIsOpen } = useContext(zoomContext)
     const data = useMemo(() => mData, [])
     const columns = [
         {
@@ -94,8 +96,7 @@ function MainTable() {
                 />
                 <div className="flex gap-2">
                     <DownloadButton data={data} fileName={'b2c'} />
-                    {/* <ZoomButton onclick={()=>setIsZoomed(true)}/> */}
-                    <ZoomButton />
+                    <ZoomButton onclick={() => setIsOpen(true)} />
                 </div>
             </div>
             <div

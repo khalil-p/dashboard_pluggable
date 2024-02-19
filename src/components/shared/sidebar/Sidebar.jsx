@@ -10,7 +10,7 @@ import { LuChevronLast } from 'react-icons/lu'
 import Submenu from './Submenu'
 import { sideBarContext } from '../../../lib/contexts/sideBarContext'
 const linkClases =
-    'flex items-center font-semibold text-sm px-3 py-2 hover:bg-white hover:no-underline hover:rounded-xl hover:text-[#5879e6] active:bg-netral-600 rounded-sm text-base focus:outline-none w-fit'
+    'flex items-center font-semibold text-sm py-2 hover:bg-white hover:no-underline hover:rounded-xl hover:text-[#5879e6] active:bg-netral-600 rounded-sm text-base focus:outline-none w-fit'
 function Sidebar() {
     const { expanded, setExpanded } = useContext(sideBarContext)
 
@@ -28,13 +28,13 @@ function Sidebar() {
                     <img className={`overflow-hidden transition-all ${expanded ? 'w-32' : 'w-0'}`} src={logo} alt="" />
                 </div>
                 <div
-                    className={`overflow-x-hidden ${expanded ? 'pr-4' : 'pr-0'} pb-4 flex-1 flex flex-col gap-0.5 overflow-scroll overflow-y-auto w-fit`}
+                    className={`overflow-x-hidden ${expanded ? 'pr-4' : 'pr-2'} pb-4 flex-1 flex flex-col gap-0.5 overflow-scroll overflow-y-auto w-fit`}
                 >
                     {DASHBOARD_SIDEBAR_LINKS.map((item) => (
                         <SidebarLinks key={item.key} item={item} />
                     ))}
                 </div>
-                <div className={classNames('text-red-500 cursor-pointer', linkClases)}>
+                <div className={classNames('text-red-500 cursor-pointer px-3', linkClases)}>
                     <span className="text-xl">
                         <RiLogoutCircleLine />
                     </span>
@@ -59,6 +59,7 @@ function SidebarLinks({ item }) {
                             ? // ? "text-sky-500 bg-white rounded-xl"
                               'text-[#5879e6] bg-[#FFFFFF] rounded-xl'
                             : `text-[#4e4b4b]`,
+                        'px-3',
                         linkClases
                     )}
                     onClick={() => setSubMenuOpen(!subMenuOpen)}
