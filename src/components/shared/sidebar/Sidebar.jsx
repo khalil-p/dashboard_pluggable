@@ -16,7 +16,7 @@ function Sidebar() {
 
     return (
         <>
-            <div className="p-3 flex flex-col text-white z-[999] max-w-[16rem]">
+            <div className="p-3 flex flex-col text-white z-30 max-w-[16rem]">
                 <div className="flex items-center justify-start px-2 pb-3 h-12 max-h-12 overflow-hidden gap-2 text-[#4e4b4b]">
                     <button
                         className="cursor-pointer p-2 rounded-xl hover:bg-slate-100 border border-gray text-[#5879e6] bg-[#fff]"

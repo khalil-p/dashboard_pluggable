@@ -6,6 +6,7 @@ import BarChartDb from "../../shared/charts/BarChartDb";
 import PieChartDb from "../../shared/charts/PieChartDb";
 import LineChartDb from "../../shared/charts/LineChartDb";
 import DatePickerCalendar from "../../shared/datePickerCalendar/DatePickerCalendar";
+import Path from "../../shared/Path";
 const upcomingRenewalList = [
   {
     when: "Today",
@@ -56,7 +57,7 @@ const productsForBarChart = [
 function Dashboard() {
   return (
     <div>
-      <p>Dashboard</p>
+      <Path/>
       <div className="flex justify-between">
         <div className="flex-1">
           <Background>
