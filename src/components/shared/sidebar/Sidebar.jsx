@@ -8,11 +8,11 @@ import { RiLogoutCircleLine } from 'react-icons/ri'
 import { LuChevronFirst } from 'react-icons/lu'
 import { LuChevronLast } from 'react-icons/lu'
 import Submenu from './Submenu'
-import { sideBarContext } from '../../../lib/contexts/sideBarContext'
+import { commonConetxt } from '../../../lib/contexts/sharedContexts'
 const linkClases =
     'flex items-center font-semibold text-sm py-2 hover:bg-white hover:no-underline hover:rounded-xl hover:text-[#5879e6] active:bg-netral-600 rounded-sm text-base focus:outline-none w-fit'
 function Sidebar() {
-    const { expanded, setExpanded } = useContext(sideBarContext)
+    const { expanded, setExpanded } = useContext(commonConetxt)
 
     return (
         <>
@@ -46,7 +46,7 @@ function Sidebar() {
 }
 
 function SidebarLinks({ item }) {
-    const { expanded } = useContext(sideBarContext)
+    const { expanded } = useContext(commonConetxt)
     const { pathname } = useLocation()
     const [subMenuOpen, setSubMenuOpen] = useState(false)
     return (

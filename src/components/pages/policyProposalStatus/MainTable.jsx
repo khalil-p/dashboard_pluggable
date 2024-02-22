@@ -17,59 +17,57 @@ import { GrFormNext } from "react-icons/gr";
 import mData from "./accets/MOCK_DATA.json";
 import SearchInputBox from "../../shared/searchInput/SearchInputBox";
 import DownloadButton from "../../shared/buttons/DownloadButton";
-import { sideBarContext } from "../../../lib/contexts/sideBarContext";
+import { commonConetxt } from "../../../lib/contexts/sharedContexts";
 import ZoomButton from "../../shared/buttons/ZoomButton";
-// import Modal from "../../shared/modal/Modal";
-// import { zoomContext } from '../../../lib/contexts/commonContexts'
-function MainTable() {
-  const { expanded } = useContext(sideBarContext);
-  const [tableZoomed, setTableZoomed] = useState(false);
+function MainTable({ columns }) {
+  const { expanded } = useContext(commonConetxt);
   const [mainDivCss, setMainDivCss] = useState("");
   const [tableDivCss, setTableDivCss] = useState("max-h-[calc(100vh-395px)]");
   const [tableWidth, setTableWidth] = useState("w-[calc(100vw-327px)]");
   const data = useMemo(() => mData, []);
-  const columns = [
-    {
-      header: "ID",
-      accessorKey: "id",
-      footer: "ID",
-    },
-    {
-      header: "Trace ID",
-      accessorKey: "trace_id",
-      footer: "Trace ID",
-    },
-    {
-      header: "Section",
-      accessorKey: "section",
-      footer: "section",
-    },
-    {
-      header: "Customer Name",
-      accessorKey: "customer_name",
-      footer: "Customer Name",
-    },
-    {
-      header: "Mobile No.",
-      accessorKey: "mobile_no",
-      footer: "section",
-    },
-    {
-      header: "Email",
-      accessorKey: "email",
-      footer: "Email",
-    },
-    {
-      header: "Updated At",
-      accessorKey: "updated_at",
-      footer: "Updated At",
-    },
-    {
-      header: "Action",
-      accessorKey: "action",
-      footer: "Action",
-    },
-  ];
+
+  // const columns = [
+  //   {
+  //     header: "ID",
+  //     accessorKey: "id",
+  //     footer: "ID",
+  //   },
+  //   {
+  //     header: "Trace ID",
+  //     accessorKey: "trace_id",
+  //     footer: "Trace ID",
+  //   },
+  //   {
+  //     header: "Section",
+  //     accessorKey: "section",
+  //     footer: "section",
+  //   },
+  //   {
+  //     header: "Customer Name",
+  //     accessorKey: "customer_name",
+  //     footer: "Customer Name",
+  //   },
+  //   {
+  //     header: "Mobile No.",
+  //     accessorKey: "mobile_no",
+  //     footer: "section",
+  //   },
+  //   {
+  //     header: "Email",
+  //     accessorKey: "email",
+  //     footer: "Email",
+  //   },
+  //   {
+  //     header: "Updated At",
+  //     accessorKey: "updated_at",
+  //     footer: "Updated At",
+  //   },
+  //   {
+  //     header: "Action",
+  //     accessorKey: "action",
+  //     footer: "Action",
+  //   },
+  // ];
 
   const [sorting, setSorting] = useState([]);
   const [filtering, setFiltering] = useState("");

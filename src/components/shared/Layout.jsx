@@ -3,9 +3,9 @@ import { Outlet } from 'react-router-dom'
 import Sidebar from './sidebar/Sidebar'
 import Header from './header/Header'
 import Footer from './footer/Footer'
-import { sideBarContext } from '../../lib/contexts/sideBarContext'
+import { commonConetxt } from '../../lib/contexts/sharedContexts'
 export default function Layout() {
-    const {expanded} = useContext(sideBarContext)
+    const {expanded} = useContext(commonConetxt)
     return (
         <div className={`h-screen w-full flex ${expanded ? "gap-4" : "gap-0"} bg-[#eff3f6]`}>
             <Sidebar />
