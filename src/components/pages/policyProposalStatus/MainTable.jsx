@@ -14,18 +14,20 @@ import { BiLastPage } from "react-icons/bi";
 import { BiFirstPage } from "react-icons/bi";
 import { GrFormPrevious } from "react-icons/gr";
 import { GrFormNext } from "react-icons/gr";
-import mData from "./accets/MOCK_DATA.json";
+// import mData from "./accets/MOCK_DATA.json";
 import SearchInputBox from "../../shared/searchInput/SearchInputBox";
 import DownloadButton from "../../shared/buttons/DownloadButton";
 import { commonConetxt } from "../../../lib/contexts/sharedContexts";
 import ZoomButton from "../../shared/buttons/ZoomButton";
-function MainTable({ columns }) {
+function MainTable({ columns,dashboardData }) {
   const { expanded } = useContext(commonConetxt);
   const [mainDivCss, setMainDivCss] = useState("");
   const [tableDivCss, setTableDivCss] = useState("max-h-[calc(100vh-395px)]");
   const [tableWidth, setTableWidth] = useState("w-[calc(100vw-327px)]");
-  const data = useMemo(() => mData, []);
-
+  const data = useMemo(() => dashboardData, []);
+  console.log("Table data...:",data.length);
+  console.log("Table data...:",data);
+// console.log(dashboardData);
   // const columns = [
   //   {
   //     header: "ID",
@@ -132,6 +134,7 @@ function MainTable({ columns }) {
           expanded ? `${tableWidth}` : "w-full"
         }  bg-white`}
       >
+        <div className="w-max"> 
         <table className=" rounded table-fixed  ">
           <thead className="h-12 bg-white ">
             {table.getHeaderGroups().map((headerGroup) => (
@@ -188,7 +191,7 @@ function MainTable({ columns }) {
                 {row.getVisibleCells().map((cell) => (
                   <td
                     className="px-4 py-0 h-10 flex-1"
-                    style={{ overflowWrap: "anywhere" }}
+                    // style={{ overflowWrap: "anywhere" }}
                     key={cell.id}
                   >
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
@@ -198,6 +201,7 @@ function MainTable({ columns }) {
             ))}
           </tbody>
         </table>
+        </div>
       </div>
       <div className="flex justify-between px-10 items-center">
         <div className="text-sm pt-5 pb-5">

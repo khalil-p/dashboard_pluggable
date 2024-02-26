@@ -5,7 +5,7 @@ import { commonConetxt } from "../../../lib/contexts/sharedContexts.js";
 function All() {
   const [allTableColumn, setAllTableColumn] = useState([]);
   const [allMainTableColumn, setAllMainTableColumn] = useState([]);
-  const { currentStatusInfo, setCurrentStatusInfo } = useContext(commonConetxt);
+  const { currentStatusInfo, setCurrentStatusInfo,tableData, setTableData } = useContext(commonConetxt);
   useEffect(() => {
     statusInfo.forEach((i) => {
       if (i.statusOf === "all") {
@@ -13,6 +13,8 @@ function All() {
         i.info.forEach((i) => {
           if (i.info === currentStatusInfo) {
             setAllTableColumn(i.tableColumn);
+            console.log("i.tableData ....",i.tableData);
+            setTableData(i.tableData)
           }
         });
       }
@@ -37,7 +39,7 @@ function All() {
       {console.log("from all component", allTableColumn)}
 
       {console.log("AAAA from all component", allMainTableColumn)}
-      <MainTable columns={allMainTableColumn} />
+      <MainTable columns={allMainTableColumn} dashboardData={tableData}/>
     </>
   );
 }

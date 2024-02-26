@@ -1,3 +1,5 @@
+import dashboardData from './accets/DashboardData.json'
+const emptyTableMesage = 'No Data Available In The Table'
 export const statusInfo = [
     {
         statusOf: 'car',
@@ -176,7 +178,24 @@ export const statusInfo = [
                     'Pos Name',
                     'Partner Name',
                     'Action'
-                ]
+                ],
+                tableData: dashboardData?.Quote__Buy_Now
+                    ? dashboardData.Quote__Buy_Now.map((i) => {
+                          return {
+                              traceId: i?.trace_id,
+                              section: i?.section,
+                              customerName: i?.proposer_name,
+                              mobileNo: i?.proposer_mobile,
+                              regNo: i?.vehicle_registration_number,
+                              whatsApp: i?.whatsApp_Number,
+                              updatedAt: i?.quotes_date_timestamp,
+                              employeeName: i?.employee_name,
+                              posName: i?.pos_seller_name,
+                              partnerName: i?.partner_seller_name,
+                              actionLink: i?.current_page_link
+                          }
+                      })
+                    : emptyTableMesage
             },
             {
                 info: 'Redirectios',
@@ -196,7 +215,25 @@ export const statusInfo = [
                     'POS Name',
                     'Partner Name',
                     'Action'
-                ]
+                ],
+
+                tableData: dashboardData?.redirections
+                    ? dashboardData.redirections.map((i) => {
+                          return {
+                              traceId: i?.trace_id,
+                              section: i?.section,
+                              customerName: i?.proposer_name,
+                              mobileNo: i?.proposer_mobile,
+                              regNo: i?.vehicle_registration_number,
+                              whatsApp: i?.whatsApp_Number,
+                              updatedAt: i?.quotes_date_timestamp,
+                              employeeName: i?.employee_name,
+                              posName: i?.pos_seller_name,
+                              partnerName: i?.partner_seller_name,
+                              actionLink: i?.current_page_link
+                          }
+                      })
+                    : emptyTableMesage
             },
             {
                 info: 'Rider',
@@ -212,7 +249,23 @@ export const statusInfo = [
                     'POS Name',
                     'Partner Name',
                     'Action'
-                ]
+                ],
+                tableData: dashboardData?.Rider
+                    ? dashboardData.Rider.map((i) => {
+                          return {
+                              traceId: i?.trace_id,
+                              section: i?.section,
+                              customerName: i?.proposer_name,
+                              mobileNo: i?.proposer_mobile,
+                              email: i?.proposer_emailid,
+                              updatedAt: i?.quotes_date_timestamp,
+                              employeeName: i?.employee_name,
+                              posName: i?.pos_seller_name,
+                              partnerName: i?.partner_seller_name,
+                              actionLink: i?.current_page_link
+                          }
+                      })
+                    : emptyTableMesage
             },
             {
                 info: 'Proposal Pending',
@@ -233,7 +286,28 @@ export const statusInfo = [
                     'POS Name',
                     'Partner Name',
                     'Action'
-                ]
+                ],
+                tableData: dashboardData?.Proposal_Pending
+                    ? dashboardData.Proposal_Pending.map((i) => {
+                          return {
+                              traceId: i?.trace_id,
+                              section: i?.section,
+                              customerName: i?.proposer_name,
+                              mobileNo: i?.proposer_mobile,
+                              email: i?.proposer_emailid,
+                              regNo: i?.vehicle_registration_number,
+                              ckycStatus: i?.is_ckyc_verified === "Y" ? 'Verified' : "Not Verified",
+                              insurer: i?.company_name,
+                              premiumAmt: i?.premium_amount,
+                              whatsApp: i?.whatsApp_Number,
+                              updatedAt: i?.quotes_date_timestamp,
+                              employeeName: i?.employee_name,
+                              posName: i?.pos_seller_name,
+                              partnerName: i?.partner_seller_name,
+                              actionLink: i?.current_page_link
+                          }
+                      })
+                    : emptyTableMesage
             },
             {
                 info: 'Inspection',
@@ -254,7 +328,24 @@ export const statusInfo = [
                     'Status',
                     'Updated At',
                     'Action'
-                ]
+                ],
+                tableData: dashboardData?.Inspection
+                    ? dashboardData.Inspection.map((i) => {
+                          return {
+                              traceId: i?.trace_id,
+                              section: i?.section,
+                              customerName: i?.proposer_name,
+                              mobileNo: i?.proposer_mobile,
+                              regNo: i?.reg_no,
+                              whatsApp: i?.whatsApp_Number,
+                              updatedAt: i?.quotes_date_timestamp,
+                              employeeName: i?.employee_name,
+                              posName: i?.pos_seller_name,
+                              partnerName: i?.partner_seller_name,
+                              actionLink: i?.current_page_link
+                          }
+                      })
+                    : emptyTableMesage
             },
             {
                 info: 'Payment Pending',
@@ -275,7 +366,26 @@ export const statusInfo = [
                     'POS Name',
                     'Partner Name',
                     'Action'
-                ]
+                ],
+                tableData: dashboardData?.Payment_Pending
+                    ? dashboardData.Payment_Pending.map((i) => {
+                          return {
+                              traceId: i?.trace_id,
+                              section: i?.section,
+                              customerName: i?.proposer_name,
+                              mobileNo: i?.proposer_mobile,
+                              email: i?.proposer_emailid,
+                              regNo: i?.vehicle_registration_number,
+                              ckycStatus: i?.is_ckyc_verified === "Y" ? 'Verified' : "Not Verified",
+                              whatsApp: i?.whatsApp_Number,
+                              updatedAt: i?.quotes_date_timestamp,
+                              employeeName: i?.employee_name,
+                              posName: i?.pos_seller_name,
+                              partnerName: i?.partner_seller_name,
+                              actionLink: i?.current_page_link
+                          }
+                      })
+                    : emptyTableMesage
             },
             {
                 info: 'Booking Pending',
@@ -297,9 +407,25 @@ export const statusInfo = [
                     'POS Name',
                     'Partner Name',
                     'Action'
-                ]
+                ],
+                tableData: dashboardData?.Booking_Pending
+                    ? dashboardData.Booking_Pending.map((i) => {
+                          return {
+                              traceId: i?.trace_id,
+                              section: i?.section,
+                              customerName: i?.proposer_name,
+                              mobileNo: i?.proposer_mobile,
+                              regNo: i?.reg_no,
+                              whatsApp: i?.whatsApp_Number,
+                              updatedAt: i?.quotes_date_timestamp,
+                              employeeName: i?.employee_name,
+                              posName: i?.pos_seller_name,
+                              partnerName: i?.partner_seller_name,
+                              actionLink: i?.current_page_link
+                          }
+                      })
+                    : emptyTableMesage
             },
-
             {
                 info: 'Underwriting Approval',
                 count: 0,
@@ -317,7 +443,24 @@ export const statusInfo = [
                     'Updated At',
                     'Employee Name',
                     'Partner Name'
-                ]
+                ],
+                tableData: dashboardData?.Underwriting_Approval
+                    ? dashboardData.Underwriting_Approval.map((i) => {
+                          return {
+                              traceId: i?.trace_id,
+                              section: i?.section,
+                              customerName: i?.proposer_name,
+                              mobileNo: i?.proposer_mobile,
+                              regNo: i?.reg_no,
+                              whatsApp: i?.whatsApp_Number,
+                              updatedAt: i?.quotes_date_timestamp,
+                              employeeName: i?.employee_name,
+                              posName: i?.pos_seller_name,
+                              partnerName: i?.partner_seller_name,
+                              actionLink: i?.current_page_link
+                          }
+                      })
+                    : emptyTableMesage
             },
             {
                 info: 'Issued',
@@ -339,7 +482,24 @@ export const statusInfo = [
                     'Partner Name',
                     'Policy Type',
                     'Action'
-                ]
+                ],
+                tableData: dashboardData?.Issued
+                    ? dashboardData.Issued.map((i) => {
+                          return {
+                              traceId: i?.trace_id,
+                              section: i?.section,
+                              customerName: i?.proposer_name,
+                              mobileNo: i?.proposer_mobile,
+                              regNo: i?.reg_no,
+                              whatsApp: i?.whatsApp_Number,
+                              updatedAt: i?.quotes_date_timestamp,
+                              employeeName: i?.employee_name,
+                              posName: i?.pos_seller_name,
+                              partnerName: i?.partner_seller_name,
+                              actionLink: i?.current_page_link
+                          }
+                      })
+                    : emptyTableMesage
             }
         ]
     },

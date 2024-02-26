@@ -18,9 +18,17 @@ import { commonConetxt } from "./lib/contexts/sharedContexts";
 function App() {
   const [expanded, setExpanded] = useState(true);
   const [currentStatusInfo, setCurrentStatusInfo] = useState("Quotes");
+  const [tableData, setTableData] = useState([]);
   return (
     <commonConetxt.Provider
-      value={{ expanded, setExpanded, currentStatusInfo, setCurrentStatusInfo }}
+      value={{
+        expanded,
+        setExpanded,
+        currentStatusInfo,
+        setCurrentStatusInfo,
+        tableData,
+        setTableData,
+      }}
     >
       <Router>
         <Routes>
