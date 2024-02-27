@@ -25,8 +25,8 @@ function MainTable({ columns,dashboardData }) {
   const [tableDivCss, setTableDivCss] = useState("max-h-[calc(100vh-395px)]");
   const [tableWidth, setTableWidth] = useState("w-[calc(100vw-327px)]");
   const data = useMemo(() => dashboardData, []);
-  console.log("Table data...:",data.length);
-  console.log("Table data...:",data);
+  console.log("Table data length from MainTable...:",data.length);
+  console.log("Table data from MainTable...:",data);
 // console.log(dashboardData);
   // const columns = [
   //   {

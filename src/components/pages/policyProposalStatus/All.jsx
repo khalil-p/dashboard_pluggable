@@ -10,11 +10,11 @@ function All() {
     statusInfo.forEach((i) => {
       if (i.statusOf === "all") {
         // setAllTableColumn(i.info[0].tableColumn);
-        i.info.forEach((i) => {
+        i.info.forEach(async(i) => {
           if (i.info === currentStatusInfo) {
             setAllTableColumn(i.tableColumn);
             console.log("i.tableData ....",i.tableData);
-            setTableData(i.tableData)
+          await  setTableData(i.tableData)
           }
         });
       }
@@ -39,6 +39,8 @@ function All() {
       {console.log("from all component", allTableColumn)}
 
       {console.log("AAAA from all component", allMainTableColumn)}
+      {console.log("Table data from All....",tableData)}
+      {console.log("Table data length from All....",tableData.length)}
       <MainTable columns={allMainTableColumn} dashboardData={tableData}/>
     </>
   );
