@@ -14,62 +14,63 @@ import { BiLastPage } from "react-icons/bi";
 import { BiFirstPage } from "react-icons/bi";
 import { GrFormPrevious } from "react-icons/gr";
 import { GrFormNext } from "react-icons/gr";
-// import mData from "./accets/MOCK_DATA.json";
-import SearchInputBox from "../../shared/searchInput/SearchInputBox";
-import DownloadButton from "../../shared/buttons/DownloadButton";
+import mData from "./MOCK_DATA.json";
+import SearchInputBox from "../searchInput/SearchInputBox";
+import DownloadButton from "../buttons/DownloadButton";
 import { commonConetxt } from "../../../lib/contexts/sharedContexts";
-import ZoomButton from "../../shared/buttons/ZoomButton";
-function MainTable({ columns, dashboardData }) {
+import ZoomButton from "../buttons/ZoomButton";
+// function MainTable({ columns, dashboardData }) {
+function MainTable() {
   const { expanded } = useContext(commonConetxt);
   const [mainDivCss, setMainDivCss] = useState("");
   const [tableDivCss, setTableDivCss] = useState("max-h-[calc(100vh-395px)]");
   const [tableWidth, setTableWidth] = useState("w-[calc(100vw-327px)]");
-  const data = useMemo(() => dashboardData, []);
-  console.log("Table data length from MainTable...:", data.length);
-  console.log("Table data from MainTable...:", data);
+  const data = useMemo(() => mData, []);
+  //   console.log("Table data length from MainTable...:", data.length);
+  //   console.log("Table data from MainTable...:", data);
   // console.log(dashboardData);
-  // const columns = [
-  //   {
-  //     header: "ID",
-  //     accessorKey: "id",
-  //     footer: "ID",
-  //   },
-  //   {
-  //     header: "Trace ID",
-  //     accessorKey: "trace_id",
-  //     footer: "Trace ID",
-  //   },
-  //   {
-  //     header: "Section",
-  //     accessorKey: "section",
-  //     footer: "section",
-  //   },
-  //   {
-  //     header: "Customer Name",
-  //     accessorKey: "customer_name",
-  //     footer: "Customer Name",
-  //   },
-  //   {
-  //     header: "Mobile No.",
-  //     accessorKey: "mobile_no",
-  //     footer: "section",
-  //   },
-  //   {
-  //     header: "Email",
-  //     accessorKey: "email",
-  //     footer: "Email",
-  //   },
-  //   {
-  //     header: "Updated At",
-  //     accessorKey: "updated_at",
-  //     footer: "Updated At",
-  //   },
-  //   {
-  //     header: "Action",
-  //     accessorKey: "action",
-  //     footer: "Action",
-  //   },
-  // ];
+  const columns = [
+    {
+      header: "ID",
+      accessorKey: "id",
+      footer: "ID",
+    },
+    {
+      header: "Trace ID",
+      accessorKey: "trace_id",
+      footer: "Trace ID",
+    },
+    {
+      header: "Section",
+      accessorKey: "section",
+      footer: "section",
+    },
+    {
+      header: "Customer Name",
+      accessorKey: "customer_name",
+      footer: "Customer Name",
+    },
+    {
+      header: "Mobile No.",
+      accessorKey: "mobile_no",
+      footer: "section",
+    },
+    {
+      header: "Email",
+      accessorKey: "email",
+      footer: "Email",
+    },
+    {
+      header: "Updated At",
+      accessorKey: "updated_at",
+      footer: "Updated At",
+    },
+    {
+      header: "Action",
+      accessorKey: "action",
+      footer: "Action",
+    },
+  ];
 
   const [sorting, setSorting] = useState([]);
   const [filtering, setFiltering] = useState("");

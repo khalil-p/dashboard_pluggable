@@ -1,7 +1,5 @@
 import React from 'react'
 import MainTable from './MainTable'
-
-
 function Renewal() {
   return (
     <>
