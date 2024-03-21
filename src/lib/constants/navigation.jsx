@@ -13,6 +13,7 @@ import { RxQuestionMarkCircled } from "react-icons/rx";
 import { IoIosHelpBuoy } from "react-icons/io";
 import { IoDocumentOutline } from "react-icons/io5";
 import { RiLogoutCircleLine } from "react-icons/ri";
+import { ImHistory } from "react-icons/im";
 
 export const DASHBOARD_SIDEBAR_LINKS = [
   {
@@ -30,13 +31,13 @@ export const DASHBOARD_SIDEBAR_LINKS = [
   {
     key: "loast_leads",
     label: "Lost Leads",
-    path: "/lost",
+    path: "/employee/lost",
     icon: <AiOutlineFileAdd />,
   },
   {
     key: "health_nstp_cases_status",
     label: "Health NSTP Cases Status",
-    path: "/health_transaction_status",
+    path: "/employee/health_transaction_status",
     icon: <MdOutlineHealthAndSafety />,
   },
   {
@@ -45,6 +46,12 @@ export const DASHBOARD_SIDEBAR_LINKS = [
     path: null,
     icon: <IoCarOutline />,
     hasSubMenu: true,
+  }, 
+  {
+    key: "login_history",
+    label: "Login History",
+    path: "/employee/login_history",
+    icon: <ImHistory />,
   },
   {
     key: "corporate_signup",
@@ -120,11 +127,11 @@ export const SUB_MENU_LIST = [
   {
     name: "Vehicle Inspection Status",
     menus: [
-      { key: "InspectionCar", label: "Car", path: "/car" },
+      { key: "InspectionCar", label: "Car", path: "/employee/vehicle_inspection_status/car" },
       {
         key: "commercial_status",
         label: "Commercial Status",
-        path: "/commercial_status",
+        path: "/employee/vehicle_inspection_status/commercial_status",
       },
     ],
   },

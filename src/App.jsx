@@ -15,6 +15,10 @@ import Car from "./components/pages/policyProposalStatus/Car";
 import Health from "./components/pages/policyProposalStatus/Health";
 import Renewal from "./components/pages/policyProposalStatus/Renewal";
 import { commonConetxt } from "./lib/contexts/sharedContexts";
+import HealthNstp from "./components/pages/healthNstp/HealthNstp";
+import CarVehicleInspection from "./components/pages/vehicleInspectionStatus/car/CarVehicleInspection";
+import CommercialStatus from "./components/pages/vehicleInspectionStatus/commercialStatus/CommercialStatus";
+import LoginHistory from "./components/pages/loginHistory/LoginHistory";
 function App() {
   const [expanded, setExpanded] = useState(true);
   const [currentStatusInfo, setCurrentStatusInfo] = useState("Quotes");
@@ -59,7 +63,11 @@ function App() {
               <Route path="/policy_proposal_status/term" element={<Term />} />
             </Route>
             <Route path="profile" element={<Profile />} />
-            <Route path="lost" element={<LostLeads />} />
+            <Route path="/employee/lost" element={<LostLeads />} />
+            <Route path="/employee/health_transaction_status" element={<HealthNstp />} />
+            <Route path="/employee/vehicle_inspection_status/car" element={<CarVehicleInspection />} />
+            <Route path="/employee/vehicle_inspection_status/commercial_status" element={<CommercialStatus />} />
+            <Route path="/employee/login_history" element={<LoginHistory />} />
           </Route>
           <Route path="login" element={<Login />} />
         </Routes>

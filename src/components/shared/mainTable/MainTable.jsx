@@ -24,7 +24,8 @@ function MainTable() {
   const { expanded } = useContext(commonConetxt);
   const [mainDivCss, setMainDivCss] = useState("");
   const [tableDivCss, setTableDivCss] = useState("max-h-[calc(100vh-395px)]");
-  const [tableWidth, setTableWidth] = useState("w-[calc(100vw-327px)]");
+//   const [tableWidth, setTableWidth] = useState("w-[calc(100vw-324px)]");
+  const [tableWidth, setTableWidth] = useState("w-full");
   const data = useMemo(() => mData, []);
   //   console.log("Table data length from MainTable...:", data.length);
   //   console.log("Table data from MainTable...:", data);
@@ -115,13 +116,13 @@ function MainTable() {
                 ? setTableDivCss("max-h-[calc(100vh-395px)]")
                 : setTableDivCss("");
               if (
-                tableWidth === "w-[calc(100vw-327px)]" ||
+                tableWidth === "w-[calc(100vw-324px)]" ||
                 tableWidth === "w-full"
               ) {
                 setTableWidth("");
               } else {
                 if (expanded) {
-                  setTableWidth("w-[calc(100vw-327px)]");
+                  setTableWidth("w-full");
                 } else {
                   setTableWidth("w-full");
                 }
@@ -136,7 +137,7 @@ function MainTable() {
         }  bg-white`}
       >
         <div className="w-max">
-          <table className=" rounded table-fixed w-[100vw]">
+          <table className=" rounded table-fixed">
             <thead className="h-12 bg-white ">
               {table.getHeaderGroups().map((headerGroup) => (
                 <tr

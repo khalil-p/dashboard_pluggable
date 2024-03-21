@@ -92,11 +92,12 @@ function CascadingDropDown() {
           <Select
             id="ddlCountries"
             maxMenuHeight={100}
-            className="border border-gray-300 rounded-md"
+            className="border border-gray-300 rounded-md z-50"
             styles={customStyles}
             options={countryOptions} // Use countryOptions here
             placeholder="Select Country"
             onChange={handleCountry}
+            menuPortalTarget={document.body}
           />
           <Select
             id="ddlStates"
@@ -105,6 +106,7 @@ function CascadingDropDown() {
             styles={customStyles}
             options={stateOptions} // Use countryOptions here
             placeholder="Select State"
+            menuPortalTarget={document.body}
           />
           <Select
             id="ddlStates"
@@ -113,6 +115,7 @@ function CascadingDropDown() {
             styles={customStyles}
             options={stateOptions} // Use countryOptions here
             placeholder="Select State"
+            menuPortalTarget={document.body}
           />
           <Select
             id="ddlStates"
@@ -121,6 +124,7 @@ function CascadingDropDown() {
             styles={customStyles}
             options={stateOptions} // Use countryOptions here
             placeholder="Select State"
+            menuPortalTarget={document.body}
           />
           <Select
             id="ddlStates"
@@ -129,6 +133,7 @@ function CascadingDropDown() {
             styles={customStyles}
             options={stateOptions} // Use countryOptions here
             placeholder="Select State"
+            menuPortalTarget={document.body}
           />
         </HorizontalScroll>
       </div>
